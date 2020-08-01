@@ -14,11 +14,11 @@ staking = True
 boot = True
 base_name = "stress"
 base_path = "/data/platon-stress/node"
-p2p_port_range = (16789, 16889)
-rpc_port_range = (6789, 6889)
-ws_port_range = (7789, 7889)
-pprof_port_range = (8789, 8889)
-fluent_port_range = (9789, 9889)
+p2p_port_range = (18008, 18051)
+rpc_port_range = (7008, 7051)
+ws_port_range = (8808, 8851)
+pprof_port_range = (6608, 6651)
+fluent_port_range = (24231, 24324)
 
 
 def gen(nodes_file, config_file):
