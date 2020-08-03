@@ -28,8 +28,7 @@
       "maxValidators": 101,
       "unStakeFreezeDuration": 28,
       "rewardPerMaxChangeRange": 500,
-      "rewardPerChangeInterval": 2,
-      "zeroProduceFreezeDuration":20
+      "rewardPerChangeInterval": 2
     },
     "slashing": {
       "slashFractionDuplicateSign": 10,
@@ -37,7 +36,8 @@
       "slashBlocksReward": 0,
       "maxEvidenceAge": 27,
       "zeroProduceCumulativeTime": 15,
-      "zeroProduceNumberThreshold": 3
+      "zeroProduceNumberThreshold": 3,
+      "zeroProduceFreezeDuration": 20
     },
     "gov": {
       "versionProposalVoteDurationSeconds": 1600,
