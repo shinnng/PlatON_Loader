@@ -392,7 +392,7 @@ def gen_docker_compose_config(
         dc["services"]["platon"]["depends_on"].append("staking")
         dc["services"]["staking"] = {
             "network_mode": "host",
-            "image": "%s:%s" % (node["registry"], "bech32"),
+            "image": "%s:%s" % (node["registry"], "loader"),
             "container_name": "{}-staking".format(nm),
             "environment": {
                 "USE_CMD": "batch_staking",
@@ -531,7 +531,7 @@ def deploy_platon(nodes, tag, program_version):
         exec_cmd(ssh, "cd /tmp/" +
                  node["name"] + " && sudo -S -p '' cp -r * " + node["path"], node["passwd"],)
         exec_cmd(
-            ssh, "sudo -S -p '' docker pull {}:{}".format(node["registry"], "bech32"), node["passwd"],)
+            ssh, "sudo -S -p '' docker pull {}:{}".format(node["registry"], "loader"), node["passwd"],)
         exec_cmd(
             ssh, "sudo -S -p '' docker pull {}:{}".format(node["registry"], tag), node["passwd"],)
         exec_cmd(ssh, "cd %s && sudo -S -p '' docker-compose up -d" %
@@ -593,7 +593,7 @@ def check(nodes):
             executor.submit(perform, node)
 
 
-def deploy(config_file, tag="latest", program_version=2816):
+def deploy(config_file, program_version, tag="latest"):
     with open(config_file, "r") as infile:
         nodes = json.load(infile)
 

@@ -15,5 +15,5 @@
 
 # temp
 loader/cmd/gen_accounts
-cotroller/deploy-docker/*
+cotroller/deploy-docker
 cotroller/deploy-batch-gen

@@ -84,7 +84,7 @@ def batch_executor(nodes, perform, name):
                 print("{} {}@{:<10} result: success".format(name, n[0], n[1]))
 
 
-def delegate(cfg, tag="bech32"):
+def delegate(cfg, tag="loader"):
     old_nodes = None
     with open(cfg, "rb") as file:
         old_nodes = json.load(file)
@@ -99,7 +99,7 @@ def delegate(cfg, tag="bech32"):
     batch_executor(nodes, perform, delegate.__name__)
 
 
-def transfer(cfg, tag="bech32"):
+def transfer(cfg, tag="loader"):
     nodes = None
     with open(cfg, "rb") as file:
         nodes = json.load(file)
@@ -195,7 +195,7 @@ def _gen_docker_compose(node, tag, idx, cmd):
         file.close()
 
 
-def staking(cfg, program_version=2816, tag="bech32"):
+def staking(cfg, program_version, tag="loader"):
     old_nodes = None
     with open(cfg, "rb") as file:
         old_nodes = json.load(file)

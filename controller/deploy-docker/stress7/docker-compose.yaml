@@ -1,0 +1,60 @@
+version: '3.7'
+services:
+  platon:
+    image: shinnng/platon-go:latest
+    container_name: stress7
+    volumes:
+    - /data/platon-stress/node7:/data/platon
+    network_mode: host
+    environment:
+      ENABLE_DEBUG: 'true'
+      ENABLE_PPROF: 'true'
+      ENABLE_WS: 'true'
+      WSAPI: platon,debug,txpool,metrics,admin,net
+      ENABLE_RPC: 'true'
+      RPCAPI: platon,debug,txpool,metrics,admin,net
+      VERBOSITY: 1
+      INIT: 'true'
+      NEW_ACCOUNT: 'true'
+      ENABLE_DISCOVER: 'true'
+      P2PPORT: '16790'
+      WSPORT: '7790'
+      RPCPORT: '6790'
+      PPROFPORT: '8790'
+      DISABLEDBGC: 'false'
+      DBGCINTERVAL: 1000
+      DBGCTIMEOUT: 5m
+      DBGCMPT: 'true'
+      MAXPEERS: 50
+      HOST: 0.0.0.0
+      CACHE_TRIEDB: 512
+      BOOTNODES: enode://d79eb4db06374e0277ad925e1138587098e57910330dda4d9908771605260fc83def5956df8c489833aba74465abac0c027596b9d6f2510bd26865c0d3acf86d@192.168.120.124:16790
+    logging:
+      driver: fluentd
+      options:
+        fluentd-address: 192.168.120.122:9790
+        tag: platon
+        fluentd-async-connect: 'true'
+    depends_on:
+    - fluent
+    - staking
+  fluent:
+    network_mode: host
+    image: fluentd
+    container_name: stress7-fluent
+    volumes:
+    - /data/platon-stress/node7/fluent.conf:/fluentd/etc/fluent.conf
+    - /data/platon-stress/node7/log:/data/log/
+  staking:
+    network_mode: host
+    image: shinnng/platon-go:loader
+    container_name: stress7-staking
+    environment:
+      USE_CMD: batch_staking
+      URL: ws://127.0.0.1:7790
+      NODENAME: stress7
+      BLSKEY: 65e5a09243ed6e704c76a66f2a8e161c738f06101262c4e8ad5ee14591e2422b
+      NODEKEY: 5c8c30e7516dc773c096e44fc22ef5541ce244406218fa2c377be25490df47fe
+      PRIVATE_KEY: dcfb7d0babf20d4ecec0ddd140aa138a81224c66f38867a18c7b8b740314b864
+      PROGRAM_VERSION: 3329
+      CHAINID: 101

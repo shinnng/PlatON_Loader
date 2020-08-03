@@ -1,0 +1,46 @@
+version: '3.7'
+services:
+  platon:
+    image: shinnng/platon-go:latest
+    container_name: stress4
+    volumes:
+    - /data/platon-stress/node4:/data/platon
+    network_mode: host
+    environment:
+      ENABLE_DEBUG: 'true'
+      ENABLE_PPROF: 'true'
+      ENABLE_WS: 'true'
+      WSAPI: platon,debug,txpool,metrics,admin,net
+      ENABLE_RPC: 'true'
+      RPCAPI: platon,debug,txpool,metrics,admin,net
+      VERBOSITY: 1
+      INIT: 'true'
+      NEW_ACCOUNT: 'true'
+      ENABLE_DISCOVER: 'true'
+      P2PPORT: '16789'
+      WSPORT: '7789'
+      RPCPORT: '6789'
+      PPROFPORT: '8789'
+      DISABLEDBGC: 'false'
+      DBGCINTERVAL: 1000
+      DBGCTIMEOUT: 5m
+      DBGCMPT: 'true'
+      MAXPEERS: 50
+      HOST: 0.0.0.0
+      CACHE_TRIEDB: 512
+      BOOTNODES: enode://d79eb4db06374e0277ad925e1138587098e57910330dda4d9908771605260fc83def5956df8c489833aba74465abac0c027596b9d6f2510bd26865c0d3acf86d@192.168.120.124:16790
+    logging:
+      driver: fluentd
+      options:
+        fluentd-address: 192.168.120.124:9789
+        tag: platon
+        fluentd-async-connect: 'true'
+    depends_on:
+    - fluent
+  fluent:
+    network_mode: host
+    image: fluentd
+    container_name: stress4-fluent
+    volumes:
+    - /data/platon-stress/node4/fluent.conf:/fluentd/etc/fluent.conf
+    - /data/platon-stress/node4/log:/data/log/
