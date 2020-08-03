@@ -1,0 +1,68 @@
+{
+  "validateNodes": [
+    {
+      "index": 0,
+      "nodeID": "3e7c0d199acacd725c70f64e785620f806f1a35780218b7fd5f3aceffd029bdf030403b969e861240ef1c34b9aa6a0de4797683218d58bd11f0884c3326ca6ee",
+      "name": "stress1",
+      "host": "192.168.9.201:7008",
+      "blsPubKey": "7519580510db51bdfd95f5b76b82a112a0dd5758d96dbb1d6a4f4a457c42bf3edfa73ab0e7c440e02bd5a279ab340612bfcef44ed525ba81fd3f1083b32226b66eb30259b984961227ddda848e3f7c3099abcad351328712a5bc6b1258fb330f",
+      "staking": false
+    },
+    {
+      "index": 1,
+      "nodeID": "62060c992e03a5414a076d9a1b11f5b310e696d6bdca834851f94ce6a32cf21c3d91921596efce8c69acb5064b36f12e2322e6e99b03016efaeb4f81009ba730",
+      "name": "stress2",
+      "host": "192.168.9.202:7008",
+      "blsPubKey": "503cdbec120a0fce8358ea4f4646e8eb9aba51baf28e7e1c90634a185dc717147840703826743687b18345b87be46b09b7d5e9dcdd043c56629041f130593e22943dc64bb8f47813536265d4eaa7eaccccca58303ea82d97eb4dcf6a9db4a196",
+      "staking": false
+    },
+    {
+      "index": 2,
+      "nodeID": "efed4f4aa9a8a891d5786f157c769caaa7f8d467898f81ad7477fa4a158b21cff04df991cde71ec01388089ae5788f72f616c0ec27ab77ad314fb97b95b0b2b6",
+      "name": "stress3",
+      "host": "192.168.9.203:7008",
+      "blsPubKey": "0c8274b47cd307a0478f6dfac473d030ca615ef1fb41224a9556b47852ff3c6ef8b346b4d30b30c907bdad9185e6a406c43e1a616376b1b86234da2aed55fd9f54ac2c19a2f9400a280bd74345b21fea9b72f390959b5b4fdfd8dcc5a8128415",
+      "staking": false
+    },
+    {
+      "index": 3,
+      "nodeID": "6bfb5130e8a67fa5e7553000fe392afb9cfd706186c396b43e7f618d348100338fe2f0d39968f53d7e840b4bbe9d10746fc34ac01bb943bd271f0a43d8c6daef",
+      "name": "stress4",
+      "host": "192.168.9.204:7008",
+      "blsPubKey": "c043e5aa9af46d585c4b4f11e5e7faa23722e699a0a5df4b6f22a423a99f9d64706b1c6b84759afdd6672889299a2e10792e598ecfcadf21eb31047080cb387b1d4b2f86876c1786944bdc01946a7491b6f7b32742df1ef4d99c409542b2bd90",
+      "staking": false
+    },
+    {
+      "index": 4,
+      "nodeID": "2c923f422c0bd4b59776da78364b9000df1f2b2dc3c1ff4461bf3bee80fa90a8f1448af2a5760a349b2a06d181c6fb5f314460052d87613656e26e1db52abea7",
+      "name": "stress5",
+      "host": "192.168.9.201:7009",
+      "blsPubKey": "a7d27fb032111b70d47d4b60b04cc5525cf26a9440402988293e8f12bbab999939a05f43589c68cd1327ff4cbaff16183dbf37fe6c2c9db8cbb662c38cd4a7519025ad390909c9de36d83b12a05dfc6d97776ec0bb962c1ef72805008e6bc00c",
+      "staking": true
+    },
+    {
+      "index": 5,
+      "nodeID": "43f5de6514a45fb6d38196ea910048f4d86591d10df3b5f2ae00d6deee4e9224a67306470f8415cb2382aca576cd38357c0d881526bd63a5510c68f2037251e4",
+      "name": "stress6",
+      "host": "192.168.9.202:7009",
+      "blsPubKey": "a67d47dc5850869aaa8a124a5f863986f75e6968b7d6e96915c2749cb132983a4b93f4dda96d10fd5598ec91af48bf07963e21712c5a90faef63ade438d47f4489baaf4121004c8b8c4cb15aa8ab0179e3555985bd09b6636976ff1525471496",
+      "staking": true
+    },
+    {
+      "index": 6,
+      "nodeID": "95ce79f88588fdbd398ee0df7afc990b63b276e948de643addba73faea025551d68c094d00d7f6f4c1716fd9a7f8fca22655adc20ba704b86eff38862faae96e",
+      "name": "stress7",
+      "host": "192.168.9.203:7009",
+      "blsPubKey": "b0f69af14cf79c5aab1c235852f5df87ea63708618bf0d4ce2ad4ec8359473a458ea00b7b6d3464dff46c2d6009183161566a8c1776d7203de20e1c6fbcbe429c7fad4d7c889c5f4449ad82063d8bd5e4395660bcf7b29c1aa26371987daa30a",
+      "staking": true
+    },
+    {
+      "index": 7,
+      "nodeID": "1f3e753ed7281d1d2597bddd5c65e8e1aa5b7f574b21b9716775ff884c96a18a465d8b770b0192e5019e559781dfcf18d32124d0d94308a0dc9315260bdca004",
+      "name": "stressboot",
+      "host": "192.168.9.204:7009",
+      "blsPubKey": "610f8b7bea8fbe5a512b6efe5908bdfebcae11969f97bc1fa77fea3b0c9073cea6600ef6e3535f9c453ee0a7e723c00d3cc259f35d4ad6435d7ca0855b3faecd6147419fcd57f443e381a8909ae496c20292997cd54cb72dfa968871f9df4113",
+      "staking": false
+    }
+  ]
+}
