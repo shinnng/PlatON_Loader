@@ -5,10 +5,10 @@ import json
 
 num_accounts = 40
 num_consensus = 4
-total = 8
+total = 7
 user = "platon"
 passwd = "Platon123!"
-registry = "shinnng/platon-go"
+registry = "awake006/platon-test"
 
 staking = True
 boot = True
